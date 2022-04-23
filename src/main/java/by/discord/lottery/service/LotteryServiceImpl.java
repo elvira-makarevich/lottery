@@ -5,6 +5,7 @@ import by.discord.lottery.repository.LotteryMemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.Duration;
 import java.time.LocalTime;
 import java.util.List;
 import java.util.Random;
@@ -95,8 +96,9 @@ public class LotteryServiceImpl implements LotteryService {
     }
 
     private String getLotteryPeriod() {
-        return START_TIME + startTime.getHour() + COLON + startTime.getMinute() +
-                END_TIME + endTime.getHour() + COLON + endTime.getMinute() + SUFFIX;
+        Duration duration = Duration.between(startTime, endTime);
+        return LOTTERY_DURATION + duration.getSeconds() / 60 + MINUTES +
+                duration.getSeconds() % 60 + SECONDS;
     }
 
 }

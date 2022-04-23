@@ -23,8 +23,8 @@ public class ConstStringParameter {
             LOTTERY_ENDED = "Lottery ended! ",
             WON_LOTTERY = " WON THE LOTTERY!",
             LOTTERY_NOT_STARTED = "Lottery has not been started!",
-            START_TIME = "Lottery start time - ",
-            END_TIME = ", end time - ",
-            COLON = ":";
+            LOTTERY_DURATION = "Lottery duration - ",
+            MINUTES = " min, ",
+            SECONDS = " sec. ";
 
 }
